@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Give Help – Trust Member Registration</title>
+  <style>
+    :root {
+      --orange: #D35400;
+      --light-orange: #E67E22;
+      --beige: #FFF6ED;
+      --gray: #2C3E50;
+    }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #f3f2f1;
+      color: var(--gray);
+      line-height: 1.6;
+      margin: 0;
+      padding: 50px 0;
+    }
+    .bg-image {
+      position: fixed;
+      top: 0; left: 0; bottom: 0; right: 0;
+      z-index: 0;
+      background: url('https://cdn.forms.office.net/formsresources/intelligence/themes/black-backgroud.jpg') center center / cover no-repeat;
+      width: 100vw;
+      height: 100vh;
+    }
+    .container {
+      max-width: 950px;
+      margin: auto;
+      background: white;
+      border-radius: 18px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+      overflow: hidden;
+      padding: 60px 70px;
+      position: relative;
+      z-index: 1;
+    }
+    .header h1 {
+      font-size: 28px;
+      font-weight: 800;
+      margin-bottom: 15px;
+      color: #111;
+      line-height: 1.3;
+    }
+    .header p {
+      font-size: 15px;
+      color: #333;
+      margin-bottom: 15px;
+    }
+    .required-text {
+      color: #b30000;
+      font-size: 14px;
+      font-weight: 500;
+      margin-top: 10px;
+    }
+    .required {
+      color: #b30000;
+    }
+    .field {
+      margin-bottom: 28px;
+      position: relative;
+    }
+    .field-num {
+      display: inline-block;
+      background: var(--orange);
+      color: white;
+      width: 32px;
+      height: 32px;
+      line-height: 32px;
+      text-align: center;
+      border-radius: 50%;
+      font-weight: bold;
+      margin-right: 12px;
+      font-size: 14px;
+      vertical-align: top;
+    }
+    .field-label {
+      display: block;
+      font-weight: 600;
+      margin-bottom: 8px;
+      color: var(--gray);
+      font-size: 15px;
+    }
+    input[type="text"], input[type="email"], input[type="tel"], input[type="number"], select, textarea {
+      width: 100%;
+      padding: 12px 15px;
+      border: 2px solid #ddd;
+      border-radius: 8px;
+      font-size: 15px;
+      transition: border 0.3s;
+    }
+    input:focus, select:focus, textarea:focus {
+      border: 2px solid var(--orange);
+    }
+    .checkbox-group {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-top: 8px;
+    }
+    .checkbox-group label {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      cursor: pointer;
+    }
+    .radio-group {
+      display: flex;
+      gap: 15px;
+      margin-top: 8px;
+    }
+    .radio-group label {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      cursor: pointer;
+    }
+    .declaration-box {
+      background: #f9f9f9;
+      border-radius: 8px;
+      padding: 15px;
+      border: 1px solid #ddd;
+    }
+    .declaration-box p {
+      margin-bottom: 10px;
+    }
+    .error-text {
+      color: #b30000;
+      font-size: 13px;
+      margin-top: 5px;
+      display: none;
+    }
+    .error-border {
+      border-color: #b30000;
+    }
+    .submit-section {
+      text-align: center;
+      margin-top: 30px;
+    }
+    .submit-btn {
+      background: var(--orange);
+      color: white;
+      border: none;
+      padding: 12px 40px;
+      font-size: 16px;
+      font-weight: 600;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+    .submit-btn:hover {
+      background: var(--light-orange);
+    }
+  </style>
+</head>
+<body>
+  <div class="bg-image"></div>
+  <div class="container">
+    <div class="header">
+      <h1>Give Help – Trust Member (Contributor) Registration Form</h1>
+      <p class="required-text">* Required</p>
+    </div>
+
+    <form id="trustForm">
+      <p><strong>Be a Part of the Change</strong></p>
+      <p>By registering as a Trust Member (Contributor) with the Kodaikanal Education Advisory Board, you join hands in shaping the lives of underprivileged students from 6th to 12th grade. Your support can come in many forms—financial assistance, mentorship, counseling, resources, or volunteering. Every contribution creates opportunities for students to access quality education, guidance, and holistic development through cultural activities, sports, academic support, college advisory, scholarships, placements, and part-time jobs. This is your chance to give back to society and empower young minds to build brighter futures.</p>
+
+      <img src="{{ url_for('static', filename='images/trust.png') }}" alt="Students Learning" style="width:100%; margin:20px 0; border-radius:8px;">
+
+    
+
+      <div class="field">
+        <span class="field-num">1</span>
+        <label class="field-label">Full Name <span class="required">*</span></label>
+        <input type="text" name="name" placeholder="Enter your full name" required>
+        <div class="error-text">This question is required.</div>
+      </div>
+
+      <!-- FIELD 2 -->
+      <div class="field">
+        <span class="field-num">2</span>
+        <label class="field-label">Email Address <span class="required">*</span></label>
+        <input type="email" name="email" placeholder="Enter your email address" required>
+        <div class="error-text">This question is required.</div>
+      </div>
+
+      <!-- FIELD 3 -->
+      <div class="field">
+        <span class="field-num">3</span>
+        <label class="field-label">Phone Number <span class="required">*</span></label>
+        <input type="tel" name="phone" placeholder="Enter your phone number" required>
+        <div class="error-text">This question is required.</div>
+      </div>
+
+      <!-- FIELD 4 -->
+      <div class="field">
+        <span class="field-num">4</span>
+        <label class="field-label">Organization / Company Name (if applicable)</label>
+        <input type="text" name="org" placeholder="Enter organization name">
+      </div>
+
+      <!-- FIELD 5 -->
+      <div class="field">
+        <span class="field-num">5</span>
+        <label class="field-label">Contribution Amount (if financial support)</label>
+        <input type="number" name="amount" placeholder="Enter amount in INR">
+      </div>
+
+      <!-- FIELD 6 -->
+      <div class="field">
+        <span class="field-num">6</span>
+        <label class="field-label">Type of Contribution <span class="required">*</span></label>
+        <div class="checkbox-group">
+          <label><input type="checkbox" name="type" value="Financial Assistance"> Financial Assistance</label>
+          <label><input type="checkbox" name="type" value="Mentorship"> Mentorship</label>
+          <label><input type="checkbox" name="type" value="Counseling"> Counseling</label>
+          <label><input type="checkbox" name="type" value="Resources"> Resources</label>
+          <label><input type="checkbox" name="type" value="Volunteering"> Volunteering</label>
+        </div>
+        <div class="error-text">This question is required.</div>
+      </div>
+
+      <div data-automation-id="questionItem" class="css-57 ">
+        <div class="-r-60" id="QuestionId_school_name">
+          <div class="-hu-61" aria-label="8, ">
+            <span aria-hidden="true" data-automation-id="questionOrdinal">8</span>
+          </div>
+          <div class="-K-64">
+            <div class="-m-62" data-automation-id="questionTitle">
+              <span aria-level="2" role="heading">
+                <span class="text-format-content ">
+                  <label class="field-label">school name <span class="required">*</span></label>
+                </span>
+              </span>
+            </div>
+          </div>
+        </div>
+        <div class="-bU-50">
+          <div class="-a-66 lrp-text-container">
+            <span class="-nx-73">
+              <select name="school_name" required aria-label="School Name" class="-_P-72"
+                style="width:100%;min-height:48px;" data-automation-id="textInput">
+                <option value="">Select School</option>
+                <option>Government Higher Secondary School</option>
+                <option>CSI Town Middle School</option>
+                <option>CSI Primary School</option>
+                <option>St. Xavier’s Higher Secondary School</option>
+                <option>St. Joseph’s High School</option>
+                <option>Vivekanandha Vidyalaya Matric Hr. Sec.</option>
+                <option>Zion Matriculation Higher Secondary School</option>
+                <option>Bharathi Primary School</option>
+                <option>Danish Nursery and Primary School</option>
+                <option>St. Thomas Aquinas Matric Hr. Sec. School</option>
+                <option>Assefa Vidhyalaya Matriculation School</option>
+                <option>St. Mary’s Nursery and Primary School</option>
+              </select>
+            </span>
+          </div>
+        </div>
+      </div>
+
+      <!-- FIELD 8 -->
+      <div class="field">
+        <span class="field-num">8</span>
+        <label class="field-label">Contribution Frequency</label>
+        <select name="frequency">
+          <option value="">Select frequency</option>
+          <option value="One-time">One-time</option>
+          <option value="Monthly">Monthly</option>
+          <option value="Quarterly">Quarterly</option>
+          <option value="Yearly">Yearly</option>
+        </select>
+      </div>
+
+      <!-- FIELD 9 -->
+      <div class="field">
+        <span class="field-num">9</span>
+        <label class="field-label">Area of Interest</label>
+        <select name="interest">
+          <option value="">Select area</option>
+          <option value="Education">Education</option>
+          <option value="Sports">Sports</option>
+          <option value="Cultural Activities">Cultural Activities</option>
+          <option value="Career Advisory">Career Advisory</option>
+        </select>
+      </div>
+
+      <!-- FIELD 10 -->
+      <div class="field">
+        <span class="field-num">10</span>
+        <label class="field-label">Available for Volunteering? <span class="required">*</span></label>
+        <div class="radio-group">
+          <label><input type="radio" name="volunteer" value="yes" required> Yes</label>
+          <label><input type="radio" name="volunteer" value="no"> No</label>
+        </div>
+        <div class="error-text">This question is required.</div>
+      </div>
+
+      <!-- FIELD 11 -->
+      <div class="field">
+        <span class="field-num">11</span>
+        <label class="field-label">Skills / Expertise</label>
+        <textarea name="skills" rows="4" placeholder="List your skills"></textarea>
+      </div>
+
+      <!-- FIELD 12 -->
+      <div class="field">
+        <span class="field-num">12</span>
+        <label class="field-label">How did you hear about us?</label>
+        <div class="checkbox-group">
+          <label><input type="checkbox" name="referral" value="Social Media"> Social Media</label>
+          <label><input type="checkbox" name="referral" value="Friend"> Friend</label>
+          <label><input type="checkbox" name="referral" value="Website"> Website</label>
+          <label><input type="checkbox" name="referral" value="Other"> Other</label>
+        </div>
+      </div>
+
+      <!-- FIELD 13 -->
+      <div class="field">
+        <span class="field-num">13</span>
+        <label class="field-label">Message / Suggestions</label>
+        <textarea name="message" rows="4" placeholder="Your thoughts"></textarea>
+      </div>
+
+
+
+<!-- Add this in your form where payment fields are required -->
+<div class="field">
+  <span class="field-num">15</span>
+  <label class="field-label">
+    Preferred Contribution Method <span class="required">*</span>
+  </label>
+  <select name="contribution_method" id="contribution-method" required onchange="showPaymentFields()">
+    <option value="">Select a method</option>
+    <option value="UPI">UPI / PhonePe / Google Pay</option>
+    <option value="Bank Transfer">Direct Bank Transfer</option>
+    <option value="Cash">Cash</option>
+    <option value="Other">Other</option>
+  </select>
+  <div class="error-text">This question is required.</div>
+</div>
+
+<!-- UPI Payment Fields (hidden unless selected) -->
+<div id="upi-fields" style="display:none;">
+  <div class="field">
+    <span class="field-num">15a</span>
+    <label class="field-label">Your UPI/PhonePe/GPay ID <span class="required">*</span></label>
+    <input type="text" name="upi_id" placeholder="example@upi">
+    <div class="error-text">This question is required.</div>
+  </div>
+  <div class="field">
+    <span class="field-num">15b</span>
+    <label class="field-label">Amount (INR) <span class="required">*</span></label>
+    <input type="number" name="upi_amount" placeholder="Enter amount to transfer">
+    <div class="error-text">This question is required.</div>
+  </div>
+  <div>
+    <strong>Our UPI ID:</strong> <span style="font-weight:600">yourtrust@bank</span>
+    <button type="button" onclick="copyToClipboard('yourtrust@bank')">Copy</button>
+  </div>
+  <div>After submitting, you will get a payment request in your UPI app.</div>
+</div>
+
+<!-- Bank Transfer Fields (hidden unless selected) -->
+<div id="bank-fields" style="display:none;">
+  <div class="field">
+    <span class="field-num">15c</span>
+    <label class="field-label">Account Holder Name</label>
+    <input type="text" value="Trust Account Name" readonly>
+  </div>
+  <div class="field">
+    <span class="field-num">15d</span>
+    <label class="field-label">Account Number</label>
+    <input type="text" value="1234567890" readonly>
+  </div>
+  <div class="field">
+    <span class="field-label">IFSC Code</span>
+    <input type="text" value="TRUST0001234" readonly>
+  </div>
+  <div>After submitting, please transfer funds to the above account and notify us in the form.</div>
+</div>
+
+<!-- Cash Fields (if any) -->
+<div id="cash-fields" style="display:none;">
+  <div>Our team will contact you to arrange cash contribution collection.</div>
+</div>
+
+
+
+
+<!-- Updates on Usage -->
+<div class="field">
+  <span class="field-num">16</span>
+  <label class="field-label">
+    How do you want to receive updates on how your contribution is used?<span class="required">*</span>
+  </label>
+  <div class="checkbox-group">
+    <label><input type="checkbox" name="update_channel" value="Email"> Email</label>
+    <label><input type="checkbox" name="update_channel" value="WhatsApp"> WhatsApp</label>
+  </div>
+  <div class="error-text">This question is required.</div>
+</div>
+
+<!-- Email and WhatsApp for updates (only if needed) -->
+<div class="field">
+  <span class="field-num">17</span>
+  <label class="field-label">WhatsApp Number (for updates)</label>
+  <input type="tel" name="whatsapp_updates" placeholder="Enter WhatsApp number if you want updates here" >
+</div>
+<div class="field">
+  <span class="field-num">18</span>
+  <label class="field-label">Email (for updates)</label>
+  <input type="email" name="email_updates" placeholder="Enter email for updates (if different from above)" >
+</div>
+
+<!-- Reason or Wishes for Contribution -->
+<div class="field">
+  <span class="field-num">19</span>
+  <label class="field-label">Do you have any specific purpose or wishes for your contribution?</label>
+  <textarea name="contribution_purpose" rows="3" placeholder="Describe if you want your funds used for particular causes (e.g., scholarships, meals, sports, etc.)"></textarea>
+</div>
+   
+
+       <!-- FIELD 14 -->
+      <div class="field">
+        <span class="field-num">14</span>
+        <div class="declaration-box">
+            <p>Declaration</p>
+            <p>I hereby agree to register as a <strong>Trust Member</strong> and contribute to empowering underprivileged students. <span class="required">*</span></p>
+            <div class="radio-group">
+              <label><input type="radio" name="agree" value="yes" required> I Agree</label>
+            </div>
+            <div class="error-text">This question is required.</div>
+        </div>
+      </div>
+
+     <div class="submit-section">
+        <button type="submit" class="submit-btn">Submit</button>
+      </div>
+    </form>
+  </div>
+  <script>
+    document.getElementById("trustForm").addEventListener("submit", function(e) {
+      e.preventDefault();
+      const fields = this.querySelectorAll("[required]");
+      let firstInvalid = null;
+      fields.forEach(field => {
+        const fieldContainer = field.closest('.field') || field.closest('.declaration-box');
+        const error = fieldContainer?.querySelector('.error-text');
+        if (field.type === "radio" || field.type === "checkbox") {
+          const group = this.querySelectorAll(`[name="${field.name}"]`);
+          const checked = Array.from(group).some(input => input.checked);
+          if (!checked) {
+            if (error) error.style.display = "block";
+            group.forEach(input => input.classList.add("error-border"));
+            if (!firstInvalid) firstInvalid = field;
+          } else {
+            if (error) error.style.display = "none";
+            group.forEach(input => input.classList.remove("error-border"));
+          }
+        } else if (!field.value.trim()) {
+          if (error) error.style.display = "block";
+          field.classList.add("error-border");
+          if (!firstInvalid) firstInvalid = field;
+        } else {
+          if (error) error.style.display = "none";
+          field.classList.remove("error-border");
+        }
+      });
+      if (firstInvalid) {
+        firstInvalid.scrollIntoView({ behavior: "smooth", block: "center" });
+        firstInvalid.focus();
+        return;
+      }
+      const formData = new FormData(this);
+      const data = {};
+      formData.forEach((value, key) => {
+        if (data[key]) {
+          if (Array.isArray(data[key])) data[key].push(value);
+          else data[key] = [data[key], value];
+        } else {
+          data[key] = value;
+        }
+      });
+      fetch('/submit', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data)
+      })
+      .then(response => response.json())
+      .then(res => {
+        if(res.redirect) window.location.href = res.redirect;
+        else alert("Something went wrong");
+      });
+    });
+   
+function showUPIFields() {
+  var method = document.getElementById('contribution-method').value;
+  document.getElementById('upi-details').style.display = (method == 'UPI') ? 'block' : 'none';
+}
+function copyToClipboard(text) {
+  var inp = document.createElement('input');
+  inp.value = text;
+  document.body.appendChild(inp);
+  inp.select();
+  document.execCommand('copy');
+  document.body.removeChild(inp);
+  alert("UPI ID copied!");
+}
+
+function showPaymentFields() {
+  var method = document.getElementById('contribution-method').value;
+  document.getElementById('upi-fields').style.display = (method == 'UPI' ? 'block' : 'none');
+  document.getElementById('bank-fields').style.display = (method == 'Bank Transfer' ? 'block' : 'none');
+  document.getElementById('cash-fields').style.display = (method == 'Cash' ? 'block' : 'none');
+}
+function copyToClipboard(text) {
+  var inp = document.createElement('input');
+  inp.value = text;
+  document.body.appendChild(inp);
+  inp.select();
+  document.execCommand('copy');
+  document.body.removeChild(inp);
+  alert("UPI ID copied!");
+}
+
+  </script>
+</body>
+</html>
+         

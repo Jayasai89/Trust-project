@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KEAD - Kodaikanal Education Advisory Board</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Poppins', sans-serif; background: #f9f9f9; }
+
+        .top-bar {
+            background: #c00000;
+            color: white;
+            padding: 10px 40px;
+            display: flex;
+            justify-content: space-between;
+            font-size: 14px;
+            font-weight: 500;
+        }
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 50px;
+            background: white;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        .logo img { height: 70px; }
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 35px;
+        }
+        .nav-links a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            font-size: 15px;
+        }
+        .nav-links a:hover { color: #c00000; }
+
+        .hero {
+            position: relative;
+            height: 85vh;
+        }
+        .hero img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .overlay {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            color: white;
+        }
+        .overlay h1 {
+            font-size: 110px;
+            font-weight: 800;
+            text-shadow: 4px 4px 15px rgba(0,0,0,0.6);
+        }
+        .overlay h2 {
+            font-size: 38px;
+            margin: 20px 0 50px;
+            text-shadow: 2px 2px 10px rgba(0,0,0,0.5);
+        }
+        .buttons {
+            display: flex;
+            gap: 40px;
+            justify-content: center;
+        }
+        .btn {
+            background: #c00000;
+            color: white;
+            padding: 18px 50px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-size: 20px;
+            font-weight: 600;
+            box-shadow: 0 8px 20px rgba(192,0,0,0.4);
+            transition: all 0.3s;
+        }
+        .btn:hover {
+            background: #a00000;
+            transform: translateY(-5px);
+        }
+        .footer {
+            text-align: center;
+            padding: 20px;
+            background: #222;
+            color: white;
+            margin-top: -5px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="top-bar">
+        <div>Indiana USA | Reading UK | Cologne Germany | Bangalore India</div>
+        <div>workforce@chervic.in</div>
+    </div>
+
+    <div class="navbar">
+        <div class="logo">
+            <img src="https://via.placeholder.com/90x70/c00000/ffffff?text=CAS" alt="CAS">
+            <div>
+                <strong style="font-size:18px;">CHERVIC ADVISORY SERVICES</strong><br>
+                <span style="color:#888; font-size:14px;">Cognitive Artificial Science</span>
+            </div>
+        </div>
+        <ul class="nav-links">
+            <li><a href="/">Home</a></li>
+            <li><a href="#">Cognitive Artificial Science</a></li>
+            <li><a href="#">Our Products</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">Career</a></li>
+            <li><a href="#">CSR</a></li>
+            <li><a href="#">Contact Us</a></li>
+        </ul>
+    </div>
+
+    <div class="hero">
+        <img src="{{ url_for('static', filename='images/background.jpg') }}" alt="KEAD">
+        <div class="overlay">
+            <h1>KEAD</h1>
+            <h2>Kodaikanal Education Advisory Board</h2>
+            <div class="buttons">
+                <a href="/gethelp" class="btn">Get Help</a>
+                <a href="/givehelp" class="btn">Give Help</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        © 2025 Chervic Advisory Services. All Rights Reserved.
+    </div>
+</body>
+</html>

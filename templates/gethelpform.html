@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Get Help – Beneficiary Application</title>
+  <style>
+    :root {
+      --orange: #D35400;
+      --light-orange: #E67E22;
+      --beige: #FFF6ED;
+      --gray: #2C3E50;
+    }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #f3f2f1;
+      color: var(--gray);
+      line-height: 1.6;
+      margin: 0;
+      padding: 50px 0;
+    }
+    .bg-image {
+      position: fixed;
+      top: 0; left: 0; bottom: 0; right: 0;
+      z-index: 0;
+      background: url('https://cdn.forms.office.net/images/theme/intelligence/pencil1.jpg') center center / cover no-repeat;
+      width: 100vw;
+      height: 100vh;
+    }
+    .container {
+      max-width: 950px;
+      margin: auto;
+      background: white;
+      border-radius: 18px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+      overflow: hidden;
+      padding: 60px 70px;
+      position: relative;
+      z-index: 1;
+    }
+    .header h1 {
+      font-size: 28px;
+      font-weight: 800;
+      margin-bottom: 15px;
+      color: #111;
+      line-height: 1.3;
+    }
+    .header p {
+      font-size: 15px;
+      color: #333;
+      margin-bottom: 15px;
+    }
+    .required-text {
+      color: #b30000;
+      font-size: 14px;
+      font-weight: 500;
+      margin-top: 10px;
+    }
+    .required {
+      color: #b30000;
+    }
+    .field {
+      margin-bottom: 28px;
+      position: relative;
+    }
+    .field-num {
+      display: inline-block;
+      background: var(--orange);
+      color: white;
+      width: 32px;
+      height: 32px;
+      line-height: 32px;
+      text-align: center;
+      border-radius: 50%;
+      font-weight: bold;
+      margin-right: 12px;
+      font-size: 14px;
+      vertical-align: top;
+    }
+    .field-label {
+      display: block;
+      font-weight: 600;
+      margin-bottom: 8px;
+      color: var(--gray);
+      font-size: 15px;
+    }
+    input[type="text"], input[type="date"], input[type="email"], input[type="tel"], select, textarea {
+      width: 100%;
+      padding: 12px 15px;
+      border: 2px solid #ddd;
+      border-radius: 8px;
+      font-size: 15px;
+      transition: border 0.3s;
+    }
+    input:focus, select:focus, textarea:focus {
+      border: 2px solid var(--orange);
+    }
+    .radio-group {
+      display: flex;
+      gap: 15px;
+      margin-top: 8px;
+    }
+    .radio-group label {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      cursor: pointer;
+    }
+    .declaration-box {
+      background: #f9f9f9;
+      border-radius: 8px;
+      padding: 15px;
+      border: 1px solid #ddd;
+    }
+    .declaration-box p {
+      margin-bottom: 10px;
+    }
+    .error-text {
+      color: #b30000;
+      font-size: 13px;
+      margin-top: 5px;
+      display: none;
+    }
+    .error-border {
+      border-color: #b30000;
+    }
+    .submit-section {
+      text-align: center;
+      margin-top: 30px;
+    }
+    .submit-btn {
+      background: var(--orange);
+      color: white;
+      border: none;
+      padding: 12px 40px;
+      font-size: 16px;
+      font-weight: 600;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+    .submit-btn:hover {
+      background: var(--light-orange);
+    }
+  </style>
+</head>
+<body>
+  <div class="bg-image"></div>
+  <div class="container">
+    <div class="header">
+      <h1>Get Help – Beneficiary Application Form</h1>
+      <p class="required-text">* Required</p>
+    </div>
+    <form id="getHelpForm">
+      <!-- FIELD 1 -->
+      <div class="field">
+        <span class="field-num">1</span>
+        <label class="field-label">Full Name <span class="required">*</span></label>
+        <input type="text" name="full_name" placeholder="Enter your full name" required>
+        <div class="error-text">This question is required.</div>
+      </div>
+      <!-- FIELD 2 -->
+      <div class="field">
+        <span class="field-num">2</span>
+        <label class="field-label">Date of Birth <span class="required">*</span></label>
+        <input type="date" name="dob" required>
+        <div class="error-text">This question is required.</div>
+      </div>
+      <!-- FIELD 3 -->
+      <div class="field">
+        <span class="field-num">3</span>
+        <label class="field-label">Gender <span class="required">*</span></label>
+        <div class="radio-group">
+          <label><input type="radio" name="gender" value="male" required> Male</label>
+          <label><input type="radio" name="gender" value="female"> Female</label>
+          <label><input type="radio" name="gender" value="other"> Other</label>
+        </div>
+        <div class="error-text">This question is required.</div>
+      </div>
+      <!-- FIELD 4 -->
+      <div class="field">
+        <span class="field-num">4</span>
+        <label class="field-label">Current Class / Grade <span class="required">*</span></label>
+        <select name="class_grade" required>
+          <option value="">Select your class</option>
+          <option value="6th">6th</option>
+          <option value="7th">7th</option>
+          <option value="8th">8th</option>
+          <option value="9th">9th</option>
+          <option value="10th">10th</option>
+          <option value="11th">11th</option>
+          <option value="12th">12th</option>
+        </select>
+        <div class="error-text">This question is required.</div>
+      </div>
+      <div data-automation-id="questionItem" class="css-57 ">
+        <div class="-r-60" id="QuestionId_school_name">
+          <div class="-hu-61" aria-label="8, ">
+            <span aria-hidden="true" data-automation-id="questionOrdinal">8</span>
+          </div>
+          <div class="-K-64">
+            <div class="-m-62" data-automation-id="questionTitle">
+              <span aria-level="2" role="heading">
+                <span class="text-format-content ">
+                   <label class="field-label">school name <span class="required">*</span></label>
+                </span>
+              </span>
+            </div>
+          </div>
+        </div>
+        <div class="-bU-50">
+          <div class="-a-66 lrp-text-container">
+            <span class="-nx-73">
+              <select name="school_name" required aria-label="School Name" class="-_P-72" 
+                      style="width:100%;min-height:48px;" data-automation-id="textInput">
+                <option value="">Select School</option>
+                <option>Government Higher Secondary School</option>
+                <option>CSI Town Middle School</option>
+                <option>CSI Primary School</option>
+                <option>St. Xavier’s Higher Secondary School</option>
+                <option>St. Joseph’s High School</option>
+                <option>Vivekanandha Vidyalaya Matric Hr. Sec.</option>
+                <option>Zion Matriculation Higher Secondary School</option>
+                <option>Bharathi Primary School</option>
+                <option>Danish Nursery and Primary School</option>
+                <option>St. Thomas Aquinas Matric Hr. Sec. School</option>
+                <option>Assefa Vidhyalaya Matriculation School</option>
+                <option>St. Mary’s Nursery and Primary School</option>
+              </select>
+            </span>
+          </div>
+        </div>
+      </div>
+      <!-- FIELD 6 -->
+      <div class="field">
+        <span class="field-num">6</span>
+        <label class="field-label">Mobile Number <span class="required">*</span></label>
+        <input type="tel" name="mobile" placeholder="Enter your mobile number" required>
+        <div class="error-text">This question is required.</div>
+      </div>
+      <!-- FIELD 7 -->
+      <div class="field">
+        <span class="field-num">7</span>
+        <label class="field-label">Email Address</label>
+        <input type="email" name="email" placeholder="Enter your email address">
+      </div>
+      <!-- FIELD 8 -->
+      <div class="field">
+        <span class="field-num">8</span>
+        <label class="field-label">Address <span class="required">*</span></label>
+        <textarea name="address" rows="3" placeholder="Enter your full address" required></textarea>
+        <div class="error-text">This question is required.</div>
+      </div>
+      <!-- FIELD 9 -->
+      <div class="field">
+        <span class="field-num">9</span>
+        <label class="field-label">Guardian Name <span class="required">*</span></label>
+        <input type="text" name="guardian_name" placeholder="Enter guardian's name" required>
+        <div class="error-text">This question is required.</div>
+      </div>
+      <!-- FIELD 10 -->
+      <div class="field">
+        <span class="field-num">10</span>
+        <label class="field-label">Guardian Contact Number <span class="required">*</span></label>
+        <input type="tel" name="guardian_contact" placeholder="Enter guardian's contact number" required>
+        <div class="error-text">This question is required.</div>
+      </div>
+      <!-- FIELD 11 -->
+      <div class="field">
+        <span class="field-num">11</span>
+        <label class="field-label">Monthly Family Income <span class="required">*</span></label>
+        <select name="family_income" required>
+          <option value="">Select income range</option>
+          <option value="Below 10,000">Below ₹10,000</option>
+          <option value="10,000-20,000">₹10,000 - ₹20,000</option>
+          <option value="20,000-30,000">₹20,000 - ₹30,000</option>
+          <option value="Above 30,000">Above ₹30,000</option>
+        </select>
+        <div class="error-text">This question is required.</div>
+      </div>
+      <!-- FIELD 12 -->
+      <div class="field">
+        <span class="field-num">12</span>
+        <label class="field-label">Reason for Seeking Support <span class="required">*</span></label>
+        <textarea name="reason" rows="4" placeholder="Explain why you need support" required></textarea>
+        <div class="error-text">This question is required.</div>
+      </div>
+      <!-- FIELD 13 -->
+      <div class="field">
+        <span class="field-num">13</span>
+        <label class="field-label">Additional Notes / Concerns</label>
+        <textarea name="comments" rows="4" placeholder="Your notes here"></textarea>
+      </div>
+      <!-- FIELD 14 -->
+      <div class="field">
+        <span class="field-num">14</span>
+        <div class="declaration-box">
+            <p>Declaration</p>
+            <p>I hereby request support from the Trust and declare that all information provided is accurate. <span class="required">*</span></p>
+            <div class="radio-group">
+              <label><input type="radio" name="agree" value="yes" required> I Agree</label>
+            </div>
+            <div class="error-text">This question is required.</div>
+        </div>
+      </div>
+      <div class="submit-section">
+        <button type="submit" class="submit-btn">Submit</button>
+      </div>
+    </form>
+  </div>
+  <script>
+    document.getElementById("getHelpForm").addEventListener("submit", function(e) {
+      e.preventDefault();
+      const fields = this.querySelectorAll("[required]");
+      let firstInvalid = null;
+      fields.forEach(field => {
+        const fieldContainer = field.closest('.field') || field.closest('.declaration-box');
+        const error = fieldContainer?.querySelector('.error-text');
+        if (field.type === "radio" || field.type === "checkbox") {
+          const group = this.querySelectorAll(`[name="${field.name}"]`);
+          const checked = Array.from(group).some(input => input.checked);
+          if (!checked) {
+            if (error) error.style.display = "block";
+            group.forEach(input => input.classList.add("error-border"));
+            if (!firstInvalid) firstInvalid = field;
+          } else {
+            if (error) error.style.display = "none";
+            group.forEach(input => input.classList.remove("error-border"));
+          }
+        } else if (!field.value.trim()) {
+          if (error) error.style.display = "block";
+          field.classList.add("error-border");
+          if (!firstInvalid) firstInvalid = field;
+        } else {
+          if (error) error.style.display = "none";
+          field.classList.remove("error-border");
+        }
+      });
+      if (firstInvalid) {
+        firstInvalid.scrollIntoView({ behavior: "smooth", block: "center" });
+        firstInvalid.focus();
+        return;
+      }
+      const formData = new FormData(this);
+      const data = {};
+      formData.forEach((value, key) => {
+        data[key] = value;
+      });
+      fetch('/submit-beneficiary', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data)
+      })
+      .then(response => response.json())
+      .then(res => {
+        if(res.redirect) window.location.href = res.redirect;
+        else alert("Something went wrong");
+      });
+    });
+  </script>
+</body>
+</html>
