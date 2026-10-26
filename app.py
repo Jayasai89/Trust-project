@@ -140,7 +140,7 @@ def submit_get_help():
     except Exception as e:
         print("Error:", e)
         return jsonify({"error": str(e)}), 500
-
+## completed
 @app.route('/submitted')
 def submitted():
     return render_template('submitted.html')
